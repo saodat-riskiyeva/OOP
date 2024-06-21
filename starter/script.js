@@ -57,10 +57,37 @@ const arr = [3, 5, 6, 9, 3, 5, 6, 9];
 
 // console.log(arr.__proto__.__proto__);
 
-Array.prototype.unique = function () {
-  return [...new Set(this)];
-};
-console.log(arr.unique());
+// Array.prototype.unique = function () {
+//   return [...new Set(this)];
+// };
+// console.log(arr.unique());
 
-const h1 = document.querySelector('h1');
-console.dir(x => x + 1);
+// const h1 = document.querySelector('h1');
+// console.dir(x => x + 1);
+
+// // class expression
+// const PersonCl = class {
+
+// }
+
+// class declaraion
+class PersonCl {
+  constructor(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  }
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  }
+}
+
+const jessica = new PersonCl('Jessica', 1996);
+console.log(jessica);
+
+jessica.calcAge();
+
+PersonCl.prototype.greet = function () {
+  console.log(`Hey ${this.firstName}`);
+};
+
+jessica.greet();
