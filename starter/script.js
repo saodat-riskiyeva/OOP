@@ -161,3 +161,30 @@ Student.prototype.introduce = function () {
 const mike = new Student('Mike', 2020, 'Computer Science');
 console.log(mike);
 mike.introduce();
+
+class StudentCl extends PersonCl {
+  constructor(fullName, birthYear, course) {
+    super(fullName, birthYear);
+    this.course = course;
+  }
+
+  introduce() {
+    console.log(
+      `Hello, my name is ${this.firstName} and I study ${this.course}`
+    );
+  }
+
+  calcAge() {
+    console.log(
+      `I am ${
+        2037 - this.birthYear
+      } years old but as a student I feel more like ${
+        2037 - this.birthYear + 10
+      } years old`
+    );
+  }
+}
+
+const martha = new StudentCl('Martha', 1999, 'Mathematics');
+martha.introduce();
+martha.calcAge();
